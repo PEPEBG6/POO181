@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exploracion</title>
+  <link rel="stylesheet" type="text/css" href="estilosg.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Exploracion</h1>
+    <form class="registration-form" action="" method="POST">
+      <div class="form-group">
+        <label for="fecha consulta">Fecha de consulta:</label>
+        <input type="date" id="fecha" name="fecha" required>
+      </div>
+      <div class="form-group">
+        <label for="Peso">Peso:</label>
+        <input type="number" id="Peso" name="Peso" required>
+      </div>
+      <div class="form-group">
+        <label for="Altura">Altura:</label>
+        <input type="number" id="Altura" name="Altura" required>
+      </div>
+      <div class="form-group">
+        <label for="Temperatura">Temperatura:</label>
+        <input type="number" id="Temperatura" name="Temperatura" required>
+      </div>
+      <div class="form-group">
+        <label for="Latidos por minuto">Latidos por minuto:</label>
+        <input type="number" id="LPM" name="LPM" required>
+      </div>
+      <div class="form-group">
+        <label for="Saturacion de oxigeno de g">Saturacion de oxigeno de glucosa:</label>
+        <input type="number" id="SOG" name="SOG" required>
+      </div>
+      <button type="submit" class="btn">Generar Diagnostico</button>
+    </form>
+  </div>
+</body>
+</html>
