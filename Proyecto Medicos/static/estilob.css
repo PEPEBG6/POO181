@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: #fff;
+    min-height: 90vh;
+    align-items: center;
+    background-image: url(imagenes/1.jfif);
+    margin: 0;
+    background-size: cover;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(150deg);
+    height: 100vh;
+}
+header{
+    width: 100%;
+    height: 80px;
+    background: #212127;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+
+}
+.Logo{
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+
+}
+.bars{
+    display: none;
+}
+.nav-bar ul{
+    display: flex;
+}
+.nav-bar ul li a{
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 25px ;
+    border-radius: 15px;
+    transition: 0.2s;
+    margin: 0 5px;
+
+}
+.nav-bar ul li a:hover{
+    color:#212127;
+    background-color: #9791b4;
+}
+.nav-bar ul li a.active{
+    color:#212127;
+    background-color: #9791b4;
+
+}
+@media(max-width:900px){
+    header{
+        padding: 0px 30px;
+    }
+
+    .bars{
+        display: block;
+        cursor: pointer;
+    }
+
+    .bars .line{
+        width: 30px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 6px 0px;
+    }
+
+    .nav-bar{
+        height: 0px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: #e7e7e9;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+    .nav-bar.active{
+        height: 450px;
+    }
+    .nav-bar ul{
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    .nav-bar.active ul{
+        opacity: 1;
+
+    }
+    .nav-bar ul li a{
+        margin-bottom: 20px;
+    }
+}

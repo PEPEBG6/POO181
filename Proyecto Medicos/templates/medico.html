@@ -1,0 +1,71 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='estilos.css')}}">
+</head>
+<body>
+
+
+               
+
+    <div class="container">
+        <div class="form-image">
+            <img src="medicos.jpg">
+        </div>
+    <div class="form">
+    <form action="/medicos" method="POST">
+        <div class="form-header">
+        
+            <div class="title">
+                <h1>MEDICOS</h1>
+            </div>
+            <div class="login-button">
+                <button><a>Guardar</a></button>
+            </div>   
+        </div>
+        
+            <div class="input-group">
+                <div class="input-box">
+                    <label>Nombre:</label>
+                    <input type="text" name ="txtNombre" placeholder="Digite su Nombre">
+                </div>
+                    <div class="input-box">
+                    <label>Apellido Paterno</label>
+                    <input type="text" name ="textAp" placeholder="Digite su Apellido Paterno">
+                </div>
+                <div class="input-box">
+                    <label> Apellido Materno</label>
+                    <input  type="text" name ="txtAm" placeholder="Digite su Apellido Materno">
+                </div>
+
+                <div class="input-box">
+                    <label>RFC</label>
+                    <input type="text" name ="textRFC" placeholder="Digite su RFC">
+                </div>
+                <div class="input-box">
+                    <label>Correo Electronico</label>
+                    <input  type="text" name ="txtCorreo" placeholder="Digite su Correo electronico">
+                </div>
+
+                <div class="input-box">
+                    <label>Contraseña</label>
+                    <input type="text" name ="textcontrasena" placeholder="Digite su Contraseña">
+                </div> 
+
+                <div class="input-box">
+                    <label for="email">ROL</label>
+                    <input id="id_rol" type="int" name ="txtid_rol" placeholder="Digite su Rol">
+                </div> 
+            </div>
+        </form>  
+            <div class="continue-button">
+                <button> <a href="bienvenida.html">ATRAS</a></button>
+            </div>   
+        </form>
+    </div>
+    </div>
+
+</body>
+</html>
