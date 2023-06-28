@@ -1,0 +1,58 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='registros.css')}}">
+</head>
+<body>
+
+
+               
+
+    <div class="container">
+        <div class="form-image">
+            <img src="">
+        </div>
+    <div class="form">
+    <form action="/registro" method="POST">
+        <div class="form-header">
+        
+            <div class="title">
+                <h1>REGISTROS</h1>
+            </div>
+              
+        </div>
+        
+            <div class="input-group">
+                <div class="input-box">
+                    <label>Nombre:</label>
+                    <input type="text" name ="txtNombre" placeholder="Digite su Nombre">
+                </div>
+                    <div class="input-box">
+                    <label>Apellido Paterno</label>
+                    <input type="text" name ="textAp" placeholder="Digite su Apellido Paterno">
+                </div>
+                <div class="input-box">
+                    <label> Apellido Materno</label>
+                    <input  type="text" name ="txtAm" placeholder="Digite su Apellido Materno">
+                </div>
+
+                <div class="input-box">
+                    <label>Rol</label>
+                    <input type="text" name ="textRFC" placeholder="Digite su Rol">
+                </div>
+                
+            </div>
+
+            <div class="login-button">
+                <button><a>Guardar</a></button>
+            </div> 
+        </form>  
+        
+    </form>
+    </div>
+    </div>
+
+</body>
+</html>

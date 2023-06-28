@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='cursos.css')}}">
+    <title>Index</title>
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>YourSpace</span>
+        </div>
+        
+        
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Inicio</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form action="/cursos" method="POST"> 
+            <div class="form-group">
+                <label for="username">Nombre:</label>
+                <input type="text" id="username" name="username" placeholder="Nombre">
+            </div><br>
+            <div class="form-group">
+                <label for="username">Materia:</label>
+                <input type="text" id="username" name="username" placeholder="Materia">
+            </div><br>
+            <div class="form-group">
+                <label for="password">Horario:</label>
+                <input type="password" id="password" name="password" placeholder="Horario">
+            </div><br>
+            <div class="form-group">
+                <label for="password">Localizacion:</label>
+                <input type="password" id="password" name="password" placeholder="Localizacion">
+            </div><br>
+            <button type="submit" class="btn-submit">Registrar</button><br><br>
+        </form>
+    </main>
+</body>
+</html>

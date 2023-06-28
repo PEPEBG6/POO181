@@ -1,0 +1,75 @@
+body {
+    background: linear-gradient(45deg, #0045ba, #ff0000, #cfcfcf);
+    background-size: 200% 200%;
+    background-position: center;
+    animation: gradientAnimation 10s ease infinite;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 330px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: center;
+    color: #333333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #CCCCCC;
+    font-size: 16px;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0045ba;
+    border: none;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #002b79;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
