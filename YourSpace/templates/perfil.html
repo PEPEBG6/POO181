@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuario</title>
+  <link rel="stylesheet" href="/public/perfil.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span>YourSpace</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar">
+      <button type="submit">Buscar</button>
+    </div>
+    <div class="user-actions">
+      <a class="upload-button" href="{{ url_for('cursos') }}">Subir curso</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="upload-button" href="{{ url_for('perfil') }}">Perfil</a>
+    </div>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('index') }}">Inicio</a></li>
+      <li><a href="{{ url_for('historial') }}">Historial</a></li>
+    </ul>
+  </nav>
+  <br>
+  <div class="container">
+    <main>
+      <div class="profile-picture">
+        <img src="https://img.freepik.com/vector-premium/dibujos-animados-perfil-mujer_18591-58476.jpg" alt="Profile Picture">
+      </div>
+      <div class="profile-info">
+        <h2 class="username">diego_d</h2>
+        <p class="name">Diego Díaz Martínez</p>
+        <p class="name">John Doe</p>
+        <p class="option"><a href="#">Cambiar Password</a></p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
