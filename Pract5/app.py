@@ -38,10 +38,28 @@ def guardar():
   flash('El album fue agregado correctamente')
   return redirect(url_for('index'))
 
+
+@app.route('/editar/<id>')
+def editar(id):
+  
+  CID=mysql.connection.cursor();
+  CID.execute('Select * from tbAlbums where id=%s', (id))
+  consultaID= CID.fetchone()
+  return render_template('editarAlbum.html',album=consultaID)
+
+
+@app.route('/actualizar/<id>', methods=['POST'])
+def actualizar(id):
+
+
+
+
 @app.route('/eliminar')
 def eliminar():
   
   return "Se elimino en la BD"
+
+
 
 #Ejecucion del servidor en el puerto 5000
 if __name__ == '__main__':
