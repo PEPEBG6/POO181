@@ -51,14 +51,28 @@ def editar(id):
 @app.route('/actualizar/<id>', methods=['POST'])
 def actualizar(id):
 
+  if request.method == 'POST':
+    varTitulo=request.form['txtTitulo']
+    varArtista=request.form['txtArtista']
+    varAnio=request.form['txtAnio']
+
+    curAct=mysql.connection.cursor()
+    curAct.execute('update tbAlbums set titulo=%s, artista=%s, anio=%s where id=%s',(varTitulo, varArtista, varAnio, id))
+    mysql.connection.commit()
+  
+  flash('Se actualizo el album'+ varTitulo)
+  return redirect(url_for('index'))
 
 
 
 @app.route('/eliminar')
 def eliminar():
-  
-  return "Se elimino en la BD"
 
+  CID=mysql.connection.cursor();
+  CID.execute('Select * from tbAlbums where id=%s', (id))
+  eliminarID= CID.fetchone()
+  return render_template('editarAlbum.html',album=eliminarID)
+  
 
 
 #Ejecucion del servidor en el puerto 5000
