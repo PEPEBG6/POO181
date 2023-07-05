@@ -65,14 +65,26 @@ def actualizar(id):
 
 
 
-@app.route('/eliminar')
-def eliminar():
+@app.route('/eliminar/<id>')
+def eliminar(id):
 
   CID=mysql.connection.cursor();
   CID.execute('Select * from tbAlbums where id=%s', (id))
   eliminarID= CID.fetchone()
-  return render_template('editarAlbum.html',album=eliminarID)
+  return render_template('eliminarAlbum.html',album=eliminarID)
+
+
+@app.route('/borrar/<id>', methods=['POST'])
+def borrar(id):
+
+  if request.method == 'POST':
+    
+    curElim=mysql.connection.cursor()
+    curElim.execute('delete from tbAlbums where id=%s',(id))
+    mysql.connection.commit()
   
+  flash('Se elimino el album')
+  return redirect(url_for('index'))
 
 
 #Ejecucion del servidor en el puerto 5000
