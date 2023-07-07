@@ -21,10 +21,28 @@ def login():
 def index():
     return render_template('index.html')
 
-
-@app.route('/registros')
+@app.route('/registros.hml')
 def registros():
     return render_template('registros.html')
+
+@app.route('/registro',methods=['POST'])
+def registro():
+
+    if request.method == 'POST':
+
+        Vusuario=request.form['usuario']
+        Vnombre=request.form['Nombre']
+        VapellidoP=request.form['ApellidoP']
+        VapellidoM=request.form['ApellidoM']
+        Vrol=request.form['Rol']
+        Vcontraseña=request.form['Contraseña']
+
+        cs= mysql.connection.cursor()
+        cs.execute('insert into usuarios (usuario,nombre,apellido_paterno,apellido_materno,id_rol,contraseña) values(%s,%s,%s,%s,%s,%s)',(Vusuario,Vnombre,VapellidoP,VapellidoM,Vrol,Vcontraseña))
+        mysql.connection.commit()
+
+    flash('Registro realizado con exito')
+    return redirect(url_for('registros'))
 
 
 @app.route('/ingresar', methods=['POST'])
