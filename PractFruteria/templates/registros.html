@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros</title>
+</head>
+<body>
+    <h1>Frutas Guardadas</h1>
+<br>
+<table>
+
+ <thead>
+   <tr>
+    <td>Id: </td>
+    <td>Fruta: </td>
+    <td>Temporada: </td>
+    <td>Precio: </td>
+    <td>Stock: </td>
+   </tr>
+ </thead>
+
+  <tbody>
+   {%for frut in listfrut%}
+   <tr>
+    <td>{{frut.0}}</td>
+    <td>{{frut.1}}</td>
+    <td>{{frut.2}}</td>
+    <td>{{frut.3}}</td>
+    <td>{{frut.4}}</td>
+    <td>
+        <a href=/editar/{{frut.0}}>Editar </a>
+        <a href=/eliminar/{{frut.0}}>Borrar </a>
+    </td>
+   </tr>
+   {%endfor%}
+  </tbody>
+
+</table>
+
+</body>
+</html>
