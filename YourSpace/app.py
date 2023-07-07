@@ -21,7 +21,7 @@ def login():
 def index():
     return render_template('index.html')
 
-@app.route('/registros.hml')
+@app.route('/registros.html')
 def registros():
     return render_template('registros.html')
 
@@ -75,9 +75,29 @@ def ingresar():
         return redirect(url_for('login'))
 
 
-@app.route('/cursos')
+@app.route('/cursos.html')
 def cursos():
     return render_template('cursos.html')
+
+@app.route('/curso',methods=['POST'])
+def curso():
+
+    if request.method == 'POST':
+
+        Vnombre=request.form['Nombre']
+        Vmateria=request.form['Materia']
+        Vtema=request.form['Tema']
+        Vdescrpcion=request.form['Descripcion']
+        Vhorario=request.form['Horario']
+        Vlocalizacion=request.form['Localizacion']
+
+        cs= mysql.connection.cursor()
+        cs.execute('insert into cursos (nombre,materia,tema,descripcion,horario,id_localizacion) values(%s,%s,%s,%s,%s,%s)',(Vnombre,Vmateria,Vtema,Vdescrpcion,Vhorario,Vlocalizacion))
+        mysql.connection.commit()
+
+
+    flash('Curso publicado con exito')
+    return redirect(url_for('cursos'))
 
 
 @app.route('/perfil')

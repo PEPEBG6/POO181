@@ -8,6 +8,15 @@
     
 </head>
 <body>
+
+    {%with mensajes= get_flashed_messages() %}
+    {%if mensajes%}
+        {%for msj in mensajes%}
+            <h3>{{ msj }}</h3>
+        {%endfor%}
+    {%endif%}
+    {%endwith%}
+
     <header>
         <div class="logo">
             <span>YourSpace</span>
@@ -21,24 +30,32 @@
         </ul>
     </nav>
     <main>
-        <form action="/cursos" method="POST"> 
+        <form action="/curso" method="POST"> 
             <div class="form-group">
                 <label for="username">Nombre:</label>
-                <input type="text" id="username" name="username" placeholder="Nombre">
+                <input type="text" id="username" name="Nombre" placeholder="Nombre">
             </div><br>
             <div class="form-group">
                 <label for="username">Materia:</label>
-                <input type="text" id="username" name="username" placeholder="Materia">
+                <input type="text" id="username" name="Materia" placeholder="Materia">
+            </div><br>
+            <div class="form-group">
+                <label for="username">Tema:</label>
+                <input type="text" id="username" name="Tema" placeholder="Tema">
+            </div><br>
+            <div class="form-group">
+                <label for="username">Descripción:</label>
+                <input type="text" id="username" name="Descripcion" placeholder="Descripción">
             </div><br>
             <div class="form-group">
                 <label for="password">Horario:</label>
-                <input type="password" id="password" name="password" placeholder="Horario">
+                <input type="datetime" id="password" name="Horario" placeholder="fecha/hora">
             </div><br>
             <div class="form-group">
-                <label for="password">Localizacion:</label>
-                <input type="password" id="password" name="password" placeholder="Localizacion">
+                <label for="password">Localización:</label>
+                <input type="password" id="password" name="Localizacion" placeholder="Localización">
             </div><br>
-            <button type="submit" class="btn-submit">Registrar</button><br><br>
+            <button type="submit">Registrar</button><br><br>
         </form>
     </main>
 </body>
