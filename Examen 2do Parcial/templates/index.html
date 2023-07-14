@@ -9,7 +9,17 @@
     <br>
     <br>
     <h1>Gestion de Flores</h1>
-    
+    <br>
+    <br>
+    {% with mensajes= get_flashed_messages() %}
+    {% if mensajes %}
+       {% for msj in mensajes %}
+          <h3> {{msj}}</h3>
+       {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <br>
 
     <form action="/guardar" method="POST">
         <label>Flor:</label>
@@ -24,6 +34,16 @@
         
 
     </form>
+
+    <ul>
+        <li>
+            <a href="registros.html">Editar</a>
+        </li>
+        <li>
+            <a href="consulta.html">Consulta</a>
+        </li>
+
+    </ul>
     
 </body>
 </html>

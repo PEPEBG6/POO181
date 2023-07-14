@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros</title>
+</head>
+<body>
+    <h1>Flores Guardadas</h1>
+<br>
+<table>
+
+ <thead>
+   <tr>
+    <td>Id: </td>
+    <td>Nombre: </td>
+    <td>Cantidad: </td>
+    <td>precio: </td>
+   </tr>
+ </thead>
+
+  <tbody>
+   {%for flor in listflor%}
+   <tr>
+    <td>{{flor.0}}</td>
+    <td>{{flor.1}}</td>
+    <td>{{flor.2}}</td>
+    <td>{{flor.3}}</td>
+    
+    <td>
+        <a href=/editar/{{flor.0}}>Editar </a>
+        
+    </td>
+   </tr>
+   {%endfor%}
+  </tbody>
+
+</table>
+
+</body>
+</html>
