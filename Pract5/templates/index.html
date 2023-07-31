@@ -6,11 +6,9 @@
 
 
 
-    <br>
-    <br>
-    <h1>Gestion de albums</h1>
-    <br>
-    <br>
+   <div class="mt-5 mb-5">
+    <h1 class="display-1 text-center">Gestion de albums</h1>
+   </div>
 
     {% with mensajes= get_flashed_messages() %}
        {% if mensajes %}
@@ -20,22 +18,42 @@
        {% endif %}
     {% endwith %}
 
-    <br>
-    <form action="/guardar" method="POST">
+<div class="container">
+<div class="row">
+      
+      <div class="col-md-5">
+        <div class="card card-body mb-5">
 
-        <input type ="text" name="txtTitulo" placeholder="Escribe titulo">
-        <input type ="text" name="txtArtista" placeholder="Escribe artisa">
-        <input type ="number" name="txtAnio" placeholder="Escribe Año">
-        
-        <button type="submit">Guardar</button>
+          <form action="/guardar" method="POST">
 
-    </form>
-<br>
-<br>
+            <div class="mb-3">
+              <input type ="text" class="form-control" name="txtTitulo" placeholder="Escribe titulo">
+            </div>
 
-<h1>Albums Guardados</h1>
-<br>
-<table>
+            <div class="mb-3">
+              <input type ="text" class="form-control" name="txtArtista" placeholder="Escribe artisa">
+            </div>
+
+            <div class="mb-3">
+              <input type ="number" class="form-control" name="txtAnio" placeholder="Escribe Año">
+            </div>
+
+            
+            
+            
+            <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-outline-primary">Guardar</button>
+          </div>
+    
+          </form>
+
+        </div>
+      </div> <!-- col-5-->
+<div class="col-md-7">
+
+  <h1>Albums Guardados</h1>
+
+  <table class="table table-striped table-hover">
 
  <thead>
    <tr>
@@ -43,25 +61,36 @@
     <td>Album: </td>
     <td>Artista: </td>
     <td>Año publicacion: </td>
+    <td>Acciones </td>
    </tr>
  </thead>
 
-  <tbody>
-   {%for alb in listAlbums%}
-   <tr>
-    <td>{{alb.0}}</td>
-    <td>{{alb.1}}</td>
-    <td>{{alb.2}}</td>
-    <td>{{alb.3}}</td>
-    <td>
-        <a href=/editar/{{alb.0}}>Editar </a>
-        <a href=/eliminar/{{alb.0}}>Borrar </a>
-    </td>
-   </tr>
-   {%endfor%}
-  </tbody>
+   <tbody>
+    {%for alb in listAlbums%}
+    <tr>
+     <td>{{alb.0}}</td>
+     <td>{{alb.1}}</td>
+     <td>{{alb.2}}</td>
+     <td>{{alb.3}}</td>
+     <td>
+        <a href=/editar/{{alb.0}} class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+        <a href=/eliminar/{{alb.0}} class="btn btn-danger"><i class="bi bi-trash3"></i></a>
+     </td>
+    </tr>
+    {%endfor%}
+   </tbody>
 
-</table>
+  </table>
+
+
+  </div> <!-- col-7-->
+
+</div> <!-- row-->
+
+</div>  <!-- container-->
+    
+
+
 
     
 {% endblock %}
