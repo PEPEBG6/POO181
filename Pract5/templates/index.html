@@ -10,15 +10,28 @@
     <h1 class="display-1 text-center">Gestion de albums</h1>
    </div>
 
-    {% with mensajes= get_flashed_messages() %}
+    
+
+<div class="container">
+  {% with mensajes= get_flashed_messages() %}
        {% if mensajes %}
           {% for msj in mensajes %}
-             <h3> {{msj}}</h3>
+             <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong><h3> {{msj}}</h3></strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            <script>Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Good Job',
+              showConfirmButton: false,
+              timer: 1500
+            })</script>
+
           {% endfor %}
        {% endif %}
     {% endwith %}
-
-<div class="container">
 <div class="row">
       
       <div class="col-md-5">
