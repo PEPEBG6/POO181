@@ -1,0 +1,71 @@
+{% extends 'Plantilla.html' %}
+
+
+{% block body%}
+<body style="background-image: url('static/imagenes/Login.jpg'); background-size: cover; background-repeat: no-repeat;"></body>
+<div class="mt-5 mb-5">
+    <h1 class="display-0 text-center text-black">Exploración</h1>
+</div>
+<div class="container text-center mt-5 ">
+    <div class="row">
+        <div class="col-15-sm-10 col-md-10 m-auto md-8">
+            <div class="card border-1 shadow">
+                <div class="card-body align-items-center">
+                    <div class="row g-2">
+                        <div class="col-md">
+                          <div class="form-floating">
+                            <input type="date" class="form-control" id="floatingInputGrid" placeholder="Ingrese la fecha">
+                            <label for="floatingInputGrid">Fecha</label>
+                          </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                              <input type="number" class="form-control" id="floatingInputGrid" placeholder="Ingrese el Peso">
+                              <label for="floatingInputGrid">Peso</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                              <input type="text" class="form-control" id="floatingInputGrid" placeholder="Ingrese la Temperatura">
+                              <label for="floatingInputGrid">Temperatura</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                              <input type="text" class="form-control" id="floatingInputGrid" placeholder="Ingrese la Altura">
+                              <label for="floatingInputGrid">Altura</label>
+                            </div>
+                        </div>
+                    </div>   
+                    <div class="row g-2 py-4">
+                        <div class="col-md">
+                          <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInputGrid" placeholder="Ingrese los latidos por minuto">
+                            <label for="floatingInputGrid">Latidos por Minuto</label>
+                          </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                              <input type="email" class="form-control" id="floatingInputGrid" placeholder="Ingrese la Saturación de Oxigeno Glucosa">
+                              <label for="floatingInputGrid">Saturación de Oxigeno Glucosa</label>
+                            </div>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-floating">
+                              <input type="email" class="form-control" id="floatingInputGrid" placeholder="Edad">
+                              <label for="floatingInputGrid">Edad</label>
+                            </div>
+                          </div>
+    
+                    </div> 
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-primary">Siguiente</button>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>               
+{% endblock %}

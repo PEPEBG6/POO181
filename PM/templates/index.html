@@ -1,0 +1,109 @@
+{% extends 'Plantilla.html' %}
+
+
+{% block body%}
+<body style="background-image: url('static/imagenes/Login.jpg'); background-size: cover; background-repeat: no-repeat;"></body>
+<div class="mt-5 mb-5">
+    <h1 class="display-0 text-center text-black">Medicos</h1>
+</div>
+<div class="container text-center mt-5 ">
+    <div class="row">
+        <div class="col-15-sm-10 col-md-10 m-auto md-8">
+            <div class="card border-1 shadow">
+                <div class="card-body align-items-center">
+                    <div class="row g-2">
+                        <div class="col-md">
+                          <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInputGrid" placeholder="Ingrese su nombre">
+                            <label for="floatingInputGrid">Nombre del Medico</label>
+                          </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                              <input type="email" class="form-control" id="floatingInputGrid" placeholder="Ingrese su Apellido Paterno">
+                              <label for="floatingInputGrid">Apellido Paterno</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                              <input type="email" class="form-control" id="floatingInputGrid" placeholder="Ingrese su Apellido Materno">
+                              <label for="floatingInputGrid">Apellido Materno</label>
+                            </div>
+                        </div>
+                    </div>   
+                    <div class="row g-2 py-4">
+                        <div class="col-md">
+                          <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInputGrid" placeholder="Ingrese su RFC">
+                            <label for="floatingInputGrid">RFC</label>
+                          </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                              <input type="email" class="form-control" id="floatingInputGrid" placeholder="Ingrese su Cedula">
+                              <label for="floatingInputGrid">Cedula Profesional</label>
+                            </div>
+                          </div>
+                        <div class="col-md">
+                          <div class="form-floating">
+                            <select class="form-select" id="floatingSelectGrid">
+                              <option value="1">Medico General</option>
+                              <option value="2">Medico Administrativo</option>
+                            </select>
+                            <label for="floatingSelectGrid">Rol Administrativo</label>
+                          </div>
+                        </div>
+                    </div>  
+                    <div class="row g-2 py-2">
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInputGrid" placeholder="Ingrese su Correo Electronico">
+                                <label for="floatingInputGrid">Correo Electronico</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="floatingInputGrid" placeholder="Ingrese su Contraseña">
+                                <label for="floatingInputGrid">Contraseña</label>
+                            </div>
+                    </div> 
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-5 mb-5">
+    <h1 class="display-0 text-center text-black">Expediente Medicos</h1>
+</div>
+<table class="table table-lihgt table-hover shadow border-1 mt-5 mb-5">
+    <thead>
+        <tr class="table-primary">
+            <th>Nombre Completo</th>
+            <th>RFC</th>
+            <th>Cedula Profesional</th>
+            <th>Rol Medico</th>
+            <th>Correo Electronico</th>
+            <th>Contraseña</th>
+            <th>Editar o Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>graciela alvarez gonzalez</td>
+            <td>55hhhhgf</td>
+            <td>gfygffh5</td>
+            <td>Medico General</td>
+            <td>graciela@gmail.com</td>
+            <td>156461gsgg</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+                
+{% endblock %}
