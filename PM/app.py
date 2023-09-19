@@ -1,7 +1,12 @@
-from flask import Flask, request, session, render_template, redirect, url_for, flash
-#from flask_session import Session
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_mysqldb import MySQL
+#from flask_session import Session
 from datetime import datetime
+#from reportlab.lib.pagesizes import letter
+#from reportlab.pdfgen import canvas
+#from reportlab.lib import colors
+#from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+#from reportlab.platypus import SimpleDocTemplate, Paragraph
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 app.config['MYSQL_HOST'] = "localhost"
@@ -20,22 +25,22 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/comprobar', methods=['POST'])
-def comprobar():
+@app.route('/ingresar', methods=['POST'])
+def ingresar():
     if request.method == 'POST':
-        usuario = request.form['rfc']
-        contraseña = request.form['contraseña']
-
+        Vrfc = request.form['rfc']
+        pas = request.form['contraseña']
+        
         Clog = mysql.connection.cursor()
-        Clog.execute('select id from usuarios where usuario=%s and contraseña =%s', (usuario, contraseña))
+        Clog.execute('select id from medicos where rfc=%s and contraseña =%s', (Vrfc, pas))
         id_usuario = Clog.fetchone()
-
+        
         if id_usuario:
-            session['usuario'] = usuario  # Establecer variable de sesión
-            return redirect(url_for('index'))
+            session['rfc'] = id_usuario  # Establecer variable de sesión
+            return render_template('index.html')
         else:
             flash('No se encontró el usuario o contraseña')
-            return redirect(url_for('login'))
+            return render_template('login.html')
         
 
 if __name__ == '__main__':
